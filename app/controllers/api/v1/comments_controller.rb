@@ -23,7 +23,13 @@ class Api::V1::CommentsController < ApplicationController
 
   def update
     @comment = Comment.find_by(id: params[:id])
-    @comment.update(comment_params)
+    if params[:comment][:content]
+      @comment.update(comment_params)
+    else
+      likes = @comment.like
+      likes += 1
+      @comment.update(like: likes)
+    end
     render json: @comment
   end
 
