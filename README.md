@@ -1,24 +1,37 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Basic books and authors  build on Ruby on Rails. 
 
-* Ruby version
+Authors has many Books
+Books belong to an Author
 
-* System dependencies
+Data is seeded with Faker gem data. 
+ 
 
-* Configuration
 
-* Database creation
+ URL: 'https://morning-shore-28838.herokuapp.com/api/v1'
 
-* Database initialization
+Books:  GET: '/books'
 
-* How to run the test suite
+        
+        POST: '/books'
+       
+        "book":
+         {"title":`title`,
+          "genre":`genre`,
+          "author_id": `author_id`}
+        
 
-* Services (job queues, cache servers, search engines, etc.)
+  
 
-* Deployment instructions
+Authors: GET: '/authors'
 
-* ...
+        
+        POST:'/authors'
+        
+             "author":
+             {"name":`name}`,
+              "url":`url`}
+                  
+         
